@@ -14,4 +14,13 @@
 
 .jumbotron {
     background-color: lightgrey;
+    
+}
+
+.col-sm-3 {
+    padding-left: 5px;
+}
+
+.container {
+    padding-top: 30px;
 }
