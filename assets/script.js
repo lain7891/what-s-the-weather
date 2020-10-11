@@ -14,19 +14,16 @@ var apiKey = "905b9fba58e1578db8d708730effecf5";
                console.log(response);
                console.log(searchCity);
     
-         //   searchCity(response);
           });
-
-        //   $(".btn").on(function(event){
-        //     event.preventDefault();
-
-        //   });
-
  }
 
+$("#city").on("click", function(event){
+     event.preventDefault();
 
-// $(".btn btn-primary").on("click", function(event){
-//     event.preventDefault();
+});
+
+ 
+
 
 //     var city = $("#search").val();
 //     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
@@ -44,5 +41,5 @@ var apiKey = "905b9fba58e1578db8d708730effecf5";
 //   });
     
 
-//  searchCity("Atlanta");
+ searchCity("Atlanta");
 });
