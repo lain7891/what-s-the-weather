@@ -1,0 +1,17 @@
+#heading {
+    background: darkgray;
+    height: 80px;
+    color: white;
+    position: relative;
+    text-align: center;
+
+};
+
+.head {
+    font-size: 65px; 
+    text-align: center;
+}
+
+.jumbotron {
+    background-color: lightgrey;
+}
