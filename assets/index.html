@@ -33,8 +33,16 @@
                 <form>
                     <div class="form-group">
                       <label for="searchForCity">Search for a City</label>
-                      <input type="search" class="form-control" id="search" aria-describedby="searchHelp">
-                      <input id="searchInput" type="submit" value="Search">
+                      <!-- <input type="search" class="form-control" id="search" aria-describedby="searchHelp"> -->
+                      <!-- <input id="searchInput" type="submit" value="Search"> -->
+                      <input
+              id="searchInput"
+              class="form-control form-control-sm mr-3 w-73"
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button id="search" class="fas fa-search" aria-hidden="true">search</button>
             
                     </div>
                     <div class="card" id="city-view" style="width: 18rem;">
