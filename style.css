@@ -27,9 +27,9 @@
 
 #card-place {
     float: left;
-   
+    column-gap: 65px;
+    margin-left: 15px;
+    margin-right: 10px;
 }
 
-.card-body {
-    margin-left: 20px;
-}
+

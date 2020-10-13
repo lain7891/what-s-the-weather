@@ -30,7 +30,7 @@
         <div class="col-sm-3">
           <form>
             <!-- <div class="form-group"> -->
-              <label for="searchForCity">Search for a City</label>
+              <!-- <label for="searchForCity">Search for a City</label> -->
               <!-- <input type="search" class="form-control" id="search" aria-describedby="searchHelp"> -->
               <!-- <input id="searchInput" type="submit" value="Search"> -->
               <input
@@ -43,12 +43,9 @@
               <button id="search" class="fas fa-search" aria-hidden="true">
                 search
               </button>
-            <!-- </div> -->
+            <!-- <div id="city-forecast"></div> -->
             <div class="card" id="city-view" style="width: 18rem">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"></li>
-                <li class="list-group-item"></li>
-                <li class="list-group-item"></li>
               </ul>
             </div>
           </form>
@@ -57,33 +54,41 @@
           <div class="jumbotron jumbotron-fluid">
               <div class="row">
                 <div class="col-sm-12">
+                  <div class="current-weather">
+                    <h2 id="city-name"></h2>
+                    <p id="temperature"></p>
+                    <p id="humidity"></p>
+                    <p id="wind-speed"></p>
+                    <p id="uv-index"></p>
+                  </div>
                     <div class="card-city">
-                        <div class="card-body">
+                        <div class="card-main">
                           <h5 class="card-title">Five Day Forecast</h5>
                 
-                            <div class="col-sm-2 card text-white bg-primary mb-3" id="card-place">
+                            <div class="col-sm-2 card text-white bg-primary mb-5" id="card-place">
                                 <div class="card-body">
                                   <h5 class="card-title">Day 1</h5>
                                 </div>
                           </div>
-                          <div class="col-sm-2 card text-white bg-primary mb-3" id="card-place">
+                       
+                          <div class="col-sm-2 card text-white bg-primary mb-5" id="card-place">
                             <div class="card-body">
                               <h5 class="card-title">Day 2</h5>
                             </div>
                       </div>
-                      <div class="col-sm-2 card text-white bg-primary mb-3" id="card-place">
+                      <div class="col-sm-2 card text-white bg-primary mb-5" id="card-place">
      
                         <div class="card-body">
                           <h5 class="card-title">Day 3</h5>
                         </div>
                   </div>
-                  <div class="col-sm-2 card text-white bg-primary mb-3" id="card-place">
+                  <div class="col-sm-2 card text-white bg-primary mb-5" id="card-place">
                     
                     <div class="card-body">
                       <h5 class="card-title">Day 4</h5>
                     </div>
               </div>
-              <div class="col-sm-2 card text-white bg-primary mb-3" id="card-place">
+              <div class="col-sm-2 card text-white bg-primary mb-5" id="card-place">
                
                 <div class="card-body">
                   <h5 class="card-title">Day 5</h5>
