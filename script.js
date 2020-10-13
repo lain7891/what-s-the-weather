@@ -66,7 +66,7 @@ $(document).ready(function () {
 
 function createCard(data){
 var cardString = `<div class="col-sm-2 card text-white bg-primary mb-5" id="card-place">
-<h5 class="card-title">${data.date}</h5>
+<h5 class="card-title">${moment(data.date).format("M/d/Y")}</h5>
 <div class="card-body">
 ${data.temperature}
 </div>
