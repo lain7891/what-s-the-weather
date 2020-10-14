@@ -16,8 +16,8 @@ $(document).ready(function () {
       //    console.log(queryURL);
       console.log(response);
       $("#city-name").text(response.name);
-      $("#temperature").text("Temperature " + response.main.temp);
-      $("#humidity").text("Humidity " + response.main.humidity);
+      $("#temperature").text("Temperature " + response.main.temp) + "F";
+      $("#humidity").text("Humidity " + response.main.humidity + " %");
       $("#wind-speed").text("Wind Speed " + response.wind.speed);
       $(".list-group").prepend(
         ' <li class="list-group-item">' + city + "</li>"
@@ -32,9 +32,14 @@ var lon = response.coord.lon
           url: queryURL,
           method: "GET",
         }).then(function (responseUV) {
-          var UVindex = responseUV[0].value;
-          console.log(UVindex);
+          console.log(responseUV);
+          var UVindex = responseUV.value;
           $("#uv-index").text("UV Index " + UVindex);
+        // }).then(function (responseUV) {
+        //   var UVindex = responseUV[0].value;
+        //   // console.log(responseUV);
+        //   console.log(UVindex);
+        //   $("#uv-index").text("UV Index " + UVindex);
         });
 
     });
@@ -77,8 +82,10 @@ var lon = response.coord.lon
           var data = {
             temperature: response.list[i].main.temp,
             date: response.list[i].dt_txt,
+            humidity: response.list[i].main.humidity,
           };
           var newCard = createCard(data);
+          console.log(newCard);
           $(".card-main").append($(newCard));
         }
       });
@@ -90,10 +97,15 @@ var lon = response.coord.lon
     var cardString = `<div class="col-sm-2 card text-white bg-primary mb-5" id="card-place">
 <h6 class="card-title">${moment(data.date).format("L")}</h6>
 <div class="card-body">
-${data.temperature};
-${data.humidity};
+${data.temperature + " F"}
+${data.humidity + " %"}
 </div>
 </div>`;
+
+
     return cardString;
+
+  
   }
+
 });
