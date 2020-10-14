@@ -1,8 +1,12 @@
 $(document).ready(function () {
+
   $("#search").on("click", function (event) {
     event.preventDefault();
     var city = $("#searchInput").val();
     console.log(city);
+   
+  
+   
 
     // current weather call
     var queryURL =
@@ -15,7 +19,8 @@ $(document).ready(function () {
     }).then(function (response) {
      
       console.log(response);
-      $("#city-name").text(response.name +  moment().format('L'));
+      $("#city-name").text(response.name +  moment().format(' L'));
+      $("#weather-icon").attr("src", "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
       $("#temperature").text("Temperature " + response.main.temp + " F");
       $("#humidity").text("Humidity " + response.main.humidity + " %");
       $("#wind-speed").text("Wind Speed " + response.wind.speed);
@@ -36,9 +41,8 @@ var lon = response.coord.lon
           var UVindex = responseUV.value;
           $("#uv-index").text("UV Index " + UVindex);
        var condition = $("<button>");
-       console.log("<button>");
        condition.text("UV Index: " + UVindex).attr("class", "btn warning");
-       $(".uv-index").prepend(condition);
+      //  $("#uv-index").prepend(condition);
        if (UVindex < 3) {
         condition.attr("class", "btn-success");
     } else if (UVindex > 7) {
@@ -93,6 +97,7 @@ var lon = response.coord.lon
           $(".card-main").append($(newCard));
         }
       });
+      
     }
   });
 
@@ -115,3 +120,4 @@ ${"Humidity " + data.humidity + " %"}
   }
 
 });
+// $("#main-info").empty();
