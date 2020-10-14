@@ -66,22 +66,22 @@ var lon = response.coord.lon
       }).then(function (response) {
         //    console.log(queryURL);
         console.log(response);
-        console.log(response.city + "moment().format('L')");
-        console.log(
-          "The current forecast calls for " +
-            response.list[0].weather[0].description
-        );
-        console.log(
-          "The current temperature is " + response.list[0].main.temp + "F"
-        );
-        console.log("Low:" + response.list[0].main.temp_min + "F");
-        console.log("High:" + response.list[0].main.temp_max + "F");
-        console.log(
-          "Humidity currently at " + response.list[0].main.humidity + "%"
-        );
-        console.log(
-          "Wind is moving at a speed of:" + response.list[0].wind.speed + "mph"
-        );
+        // console.log(response.city + "moment().format('L')");
+        // console.log(
+        //   "The current forecast calls for " +
+        //     response.list[0].weather[0].description
+        // );
+        // console.log(
+        //   "The current temperature is " + response.list[0].main.temp + "F"
+        // );
+        // console.log("Low:" + response.list[0].main.temp_min + "F");
+        // console.log("High:" + response.list[0].main.temp_max + "F");
+        // console.log(
+        //   "Humidity currently at " + response.list[0].main.humidity + "%"
+        // );
+        // console.log(
+        //   "Wind is moving at a speed of:" + response.list[0].wind.speed + "mph"
+        // );
 
 
         // Five day forecast loop for each card
@@ -103,7 +103,6 @@ var lon = response.coord.lon
 
   // Card information with date, temp and humidity
   function createCard(data) {
-
     var cardString = `<div class="col-sm-2 card text-white bg-primary mb-5" id="card-place">
 <h6 class="card-title">${moment(data.date).format("L")}</h6>
 <div class="card-body">
@@ -111,6 +110,8 @@ ${"Temp " + data.temperature + " F"}
 ${"Humidity " + data.humidity + " %"}
 </div>
 </div>`;
+
+
 
 
 
