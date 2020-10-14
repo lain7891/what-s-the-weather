@@ -4,7 +4,7 @@ $(document).ready(function () {
     var city = $("#searchInput").val();
     console.log(city);
 
-    // current weather
+    // current weather call
     var queryURL =
       "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=" +
       city +
@@ -13,10 +13,10 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      //    console.log(queryURL);
+     
       console.log(response);
-      $("#city-name").text(response.name);
-      $("#temperature").text("Temperature " + response.main.temp) + "F";
+      $("#city-name").text(response.name +  moment().format('L'));
+      $("#temperature").text("Temperature " + response.main.temp + " F");
       $("#humidity").text("Humidity " + response.main.humidity + " %");
       $("#wind-speed").text("Wind Speed " + response.wind.speed);
       $(".list-group").prepend(
@@ -27,7 +27,7 @@ var lat = response.coord.lat
 var lon = response.coord.lon
       var queryURL =
           "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=905b9fba58e1578db8d708730effecf5";
-
+// UV Index call
         $.ajax({
           url: queryURL,
           method: "GET",
@@ -35,11 +35,15 @@ var lon = response.coord.lon
           console.log(responseUV);
           var UVindex = responseUV.value;
           $("#uv-index").text("UV Index " + UVindex);
-        // }).then(function (responseUV) {
-        //   var UVindex = responseUV[0].value;
-        //   // console.log(responseUV);
-        //   console.log(UVindex);
-        //   $("#uv-index").text("UV Index " + UVindex);
+       var condition = $("<button>");
+       console.log("<button>");
+       condition.text("UV Index: " + UVindex).attr("class", "btn warning");
+       $(".uv-index").prepend(condition);
+       if (UVindex < 3) {
+        condition.attr("class", "btn-success");
+    } else if (UVindex > 7) {
+        condition.attr("class", "btn-danger");
+    }
         });
 
     });
@@ -94,13 +98,15 @@ var lon = response.coord.lon
 
   // Card information with date, temp and humidity
   function createCard(data) {
+
     var cardString = `<div class="col-sm-2 card text-white bg-primary mb-5" id="card-place">
 <h6 class="card-title">${moment(data.date).format("L")}</h6>
 <div class="card-body">
-${data.temperature + " F"}
-${data.humidity + " %"}
+${"Temp " + data.temperature + " F"}
+${"Humidity " + data.humidity + " %"}
 </div>
 </div>`;
+
 
 
     return cardString;
