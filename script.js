@@ -1,9 +1,10 @@
 $(document).ready(function () {
-
+// My button being clicked after city searched
   $("#search").on("click", function (event) {
     event.preventDefault();
     var city = $("#searchInput").val();
     console.log(city);
+    
    
   
    
@@ -19,6 +20,7 @@ $(document).ready(function () {
     }).then(function (response) {
      
       console.log(response);
+      // responses pulled and showing on page
       $("#city-name").text(response.name +  moment().format(' L'));
       $("#weather-icon").attr("src", "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
       $("#temperature").text("Temperature " + response.main.temp + " F");
@@ -27,6 +29,7 @@ $(document).ready(function () {
       $(".list-group").prepend(
         ' <li class="list-group-item">' + city + "</li>"
       );
+
       getForecast(city);
 var lat = response.coord.lat
 var lon = response.coord.lon
@@ -79,6 +82,7 @@ var lon = response.coord.lon
           };
           var newCard = createCard(data);
           console.log(newCard);
+          
           $(".card-main").append($(newCard));
         }
       });
@@ -91,11 +95,10 @@ var lon = response.coord.lon
     var cardString = `<div class="col-sm-2 card text-white bg-primary mb-5" id="card-place">
 <h6 class="card-title">${moment(data.date).format("L")}</h6>
 <div class="card-body">
-${"Temp " + data.temperature + " F"}
-${"Humidity " + data.humidity + " %"}
+${"Temp: " + data.temperature + " F"}
+${"Humidity: " + data.humidity + " %"}
 </div>
 </div>`;
-
 
 
 
@@ -107,3 +110,4 @@ ${"Humidity " + data.humidity + " %"}
 
 });
 // $("#main-info").empty();
+// ${data.weather[0.icon]}
