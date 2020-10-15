@@ -19,9 +19,9 @@ This week’s assignment had us create a website that allowed you to search a ci
 * Set Attributes
 * Open Weather API
 
-<img src = "img/images/first-page.png">
-<img src = "img/images/atlanta.png">
-<img src = "img/images/singapore.png">
+<img src ="img/images/first-page.png">
+<img src ="img/images/atlanta.png">
+<img src ="img/images/singapore.png">
 
 My struggle was getting the cards to only show up when the button was clicked and being able to add the icons into the current weather and cards. I utilized the help of my TA’s, tutors and classmates to put this together. 
 
