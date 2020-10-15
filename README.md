@@ -1,7 +1,5 @@
 # what-s-the-weather
 
-What-s-the-weather
-
 This week’s assignment had us create a website that allowed you to search a city and once your button is clicked you would get today’s weather and the next five-day forecast. The purpose of this assignment was to learn how to use API’s by making request in your script to access their data. For this assignment we used the open weather API and dynamically add the weather of the city that is inputted in the search box.
 
 # Installation
@@ -19,14 +17,19 @@ This week’s assignment had us create a website that allowed you to search a ci
 * Set Attributes
 * Open Weather API
 
+# Images of Page
+
 <img src ="img/first-page.png">
 <img src ="img/atlanta.png">
 <img src ="img/singapore.png">
 
+# Deployed site URL
+
+https://lain7891.github.io/what-s-the-weather/
+
 My struggle was getting the cards to only show up when the button was clicked and being able to add the icons into the current weather and cards. I utilized the help of my TA’s, tutors and classmates to put this together. 
 
-
-#License
+# License
 
 Used MIT License for this assignment. 
 
