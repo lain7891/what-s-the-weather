@@ -66,22 +66,7 @@ var lon = response.coord.lon
       }).then(function (response) {
         //    console.log(queryURL);
         console.log(response);
-        // console.log(response.city + "moment().format('L')");
-        // console.log(
-        //   "The current forecast calls for " +
-        //     response.list[0].weather[0].description
-        // );
-        // console.log(
-        //   "The current temperature is " + response.list[0].main.temp + "F"
-        // );
-        // console.log("Low:" + response.list[0].main.temp_min + "F");
-        // console.log("High:" + response.list[0].main.temp_max + "F");
-        // console.log(
-        //   "Humidity currently at " + response.list[0].main.humidity + "%"
-        // );
-        // console.log(
-        //   "Wind is moving at a speed of:" + response.list[0].wind.speed + "mph"
-        // );
+        
 
 
         // Five day forecast loop for each card
